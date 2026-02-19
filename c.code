@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main() {
+    int a[] = {10, 12, 15};
+    int n = sizeof(a)/sizeof(a[0]);
+    int powerSetSize = 1 << n; 
+
+    printf("Power set of the array:\n");
+    
+    for (int i = 0; i < powerSetSize; i++) {
+        printf("{ ");
+        for (int j = 0; j < n; j++) {
+            // Check if jth bit in i is set
+            if (i & (1 << j)) {
+                printf("%d "
